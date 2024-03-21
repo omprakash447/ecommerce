@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: black;
+    }
+    
+    nav {
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 5px 5px 7px rgb(165, 155, 155);
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        flex: 1;
+    }
+    
+    nav ul li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+        color: rgb(32, 133, 201);
+    }
+    
+    @media screen and (max-width: 100px) {
+        nav ul {
+            position: relative;
+            width: 100%;
+            display: none;
+        }
+        nav ul li {
+            text-align: left;
+            width: 100%;
+        }
+        nav ul li a {
+            padding: 8px 16px;
+        }
+        nav ul.show {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    
+    .texts {
+        padding: 50px 50px 50px 50px;
+    }
+    
+    .texts p {
+        font-size: 25px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .texts h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .texts h2 {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .texts img {
+        height: 40px;
+    }
+    
+    .map iframe {
+        width: 450px;
+    }
+    
+    .textmap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 50px 50px 50px 50px;
+    }
+    
+    .inputs {
+        height: 400px;
+        width: 100%;
+        padding: 50px;
+    }
+    
+    .inputs input {
+        height: 50px;
+        width: 100%;
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .inputs button {
+        height: 50px;
+        width: 150px;
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 900;
+        background-color: rgb(32, 133, 201);
+        color: #fff;
+        border-color: rgb(32, 133, 201);
+    }
+    
+    .inputs button:hover {
+        background-color: #fff;
+        color: rgb(32, 133, 201);
+    }
+    
+    .inputs input::placeholder {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .inputs h2 {
+        font-size: 30px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .inputs p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .inputstext img {
+        height: 80px;
+        border-radius: 50%;
+    }
+    
+    .inputstext {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 50px;
+        margin-top: 250px;
+    }
+    
+    .inputstext h1 {
+        font-size: 35px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .inputstext p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .inputhole {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .inp1 {
+        padding: 50px;
+    }
+    
+    .footer {
+        height: 1000px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .footer .line1 {
+        padding: 50px;
+        line-height: 50px;
+    }
+    
+    .footer .line1 #contacts {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line1 table h1 {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 900;
+        /* line-height: 20px; */
+    }
+    
+    .footer .line1 img {
+        height: 50px;
+        mix-blend-mode: darken;
+    }
+    /* .footer .line1 .follow{
+    mix-blend-mode: darken;
+} */
+    
+    .footer .line2 h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line2 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .footer .line2 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line3 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line3 h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line3 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .footer .line4 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line4 h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line4 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .footer .line4 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line4 img {
+        height: 100px;
+    }
+    
+    button {
+        height: 40px;
+        width: 80px;
+        font-size: 10px;
+        font-family: sans-serif;
+        font-weight: 900;
+        background-color: white;
+        border: 2px solid white;
+        box-shadow: 0px 0px 10px black;
+        margin: 10px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    @media(max-width:600px) {
+        nav .options {
+            display: none;
+            display: block;
+            position: fixed;
+            background-color: lightblue;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            border: 3px solid transparent;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: right;
+        }
+    }
+</style>
+
+<body>
+    <nav>
+        <ul class="options">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- abouts contacts -->
+    <div class="textmap">
+        <div class="texts">
+            <p>Get in touch</p>
+            <h1>Visit One our agency locations or contacts us today</h1>
+            <h2>Head Office</h2>
+            <img src="https://thumbs.dreamstime.com/b/building-office-tower-head-business-logo-template-flat-color-148799879.jpg" alt="" style="height: 70px;">
+            <p>Bhubaneswer , Patia square,Chandrasekharpur</p>
+
+            <img src="https://www.thewindowsclub.com/wp-content/uploads/2020/10/Gmail-Logo.png" alt="">
+            <h2>Gmail</h2>
+            <p>ommprakash@gmail.com</p>
+
+            <img src="https://webstockreview.net/images/contact-icon-png-6.png" alt="">
+            <h2>Phone No</h2>
+            <p>9178330413</p>
+
+            <img src="https://th.bing.com/th/id/OIP.blNi2omPIZ6Ho2LTFmoq-QHaHZ?rs=1&pid=ImgDetMain" alt="">
+            <h2>Time</h2>
+            <p>Monday to sarturday 9:00am - 16:oopm</p>
+
+        </div>
+
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29926.1070615381!2d85.80364220282368!3d20.351391392540684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190912b69339ab%3A0xa11e7186a04f1474!2sPatia%2C%20Bhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1710600542004!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+
+
+
+    <!-- Contacts messages -->
+    <div class="inputhole">
+        <div class="inputs">
+            <form onsubmit="data()">
+                <p>Leave a message</p>
+                <h2>We love to here from you</h2>
+                <input type="text" placeholder="Enter your name..." spellcheck="true" id="name">
+                <p id="error"></p><br><br><br>
+                <input type="email" placeholder="E-mail" spellcheck="true" id="mail">
+                <p id="error1"></p><br><br><br>
+                <input type="password" placeholder="Enter password..." id="number">
+                <p id="error2"></p><br><br><br>
+                <input type="text" placeholder="Subjects..." id="message">
+                <p id="error3"></p><br><br><br>
+                <input type="submit" name="" id="" value="submit" onclick="data()">
+                <br><br><br>
+                <input type="submit" value="See what u submitt" onclick="readlocalstorage()" id="read">
+            </form>
+        </div>
+
+
+
+        <div class="inputstext">
+            <div class="inp1">
+                <img src="https://th.bing.com/th/id/R.0301819f445a8855c4a577a6763fb62d?rik=TT%2fgaYZuz1YEig&riu=http%3a%2f%2fanhede.se%2fwp-content%2fuploads%2f2014%2f01%2f130221-2528.jpg&ehk=LToqkipED3KxGj7CVuMoQrvi487RY2HN6IPZ59FCWNQ%3d&risl=&pid=ImgRaw&r=0" alt="">
+                <h1>Pttli kumar</h1>
+                <p>Senior Marketing Manneger</p>
+                <p>Mobile No-9178330413</p>
+                <p>Email id - patilkumar@gmail.com</p>
+            </div>
+            <div class="inp1">
+                <img src="https://th.bing.com/th/id/OIP.GiGWKktHCkVO0ye8mYKXHgHaHa?w=500&h=500&rs=1&pid=ImgDetMain" alt="">
+                <h1>Kumar verma</h1>
+                <p>Senior Marketing Manneger</p>
+                <p>Mobile No-9938823454</p>
+                <p>Email id - kumarverma@gmail.com</p>
+            </div>
+            <div class="inp1">
+                <img src="https://th.bing.com/th/id/OIP.2ZevNNupB7hF8eLO0AOFCQAAAA?rs=1&pid=ImgDetMain" alt="">
+                <h1>Nathuram pathkar</h1>
+                <p>Senior Marketing Manneger</p>
+                <p>Mobile No-9178926569</p>
+                <p>Email id - nathurampatil@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="line1">
+            <img src="" alt="">
+            <h1 id="contacts">Contacts</h1>
+            <table>
+                <tr>
+                    <td>
+                        <h1>Address - </h1>
+                    </td>
+                    <td>
+                        Barabati , Jajpur , odish , india
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <h1> Phone - </h1>
+                    </td>
+                    <td>
+                        9178330413 , 9938823444
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1>Hour - </h1>
+                    </td>
+                    <td>
+                        10 : 00 - 09 : 00
+                    </td>
+                </tr>
+            </table>
+            <div class="follow">
+                <img src="https://th.bing.com/th/id/R.af1159ea3dd22f4b3d84a87d869127b9?rik=iz68IEBoErXAHw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2finstagram-icon-png-instagram-icon-1600.png&ehk=%2bAo2wF7lgRZJrtXPe3ev37c8JDCD6NBcj%2fGufhuhjQE%3d&risl=&pid=ImgRaw&r=0"
+                    alt="">
+                <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-facebook-social-media-icon-design-template-vector-png-image_3654755.jpg" alt="">
+                <img src="https://th.bing.com/th/id/OIP.7A7wPafSHhqttqoN-VQafAHaHa?rs=1&pid=ImgDetMain" alt="">
+                <img src="https://th.bing.com/th/id/OIP.uQlQc1ej3xTRMpywzGuFvAHaHw?rs=1&pid=ImgDetMain" alt="">
+            </div>
+        </div>
+
+        <div class="line2">
+            <h1>About</h1>
+            <p>About us</p>
+            <p>Delivery information</p>
+            <p>Privacy Policy</p>
+            <p>Terms & conditions</p>
+            <p>Contacts us</p>
+        </div>
+
+
+
+
+        <div class="line3">
+            <h1>My Account</h1>
+            <p>Sign in </p>
+            <p>View cart</p>
+            <p>my Whistle</p>
+            <p>Track my location</p>
+            <p>My orders</p>
+        </div>
+
+
+        <div class="line4">
+            <h1>Install my app</h1>
+            <p>From google play store & App store</p>
+            <img src="https://th.bing.com/th/id/OIP.YuiKPjNic91oLzZLkLQbmwHaHa?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://9to5mac.com/wp-content/uploads/sites/6/2014/11/tumblr_inline_ms796b31jr1qz4rgp1.png" alt="">
+        </div>
+    </div>
+</body>
+
+
+<script>
+    var read = document.getElementById("read");
+
+    function data() {
+        var a = document.getElementById("name").value;
+        var b = document.getElementById("mail").value;
+        var c = document.getElementById("number").value;
+        var d = document.getElementById("message").value;
+        let error = document.getElementById("error");
+        let error1 = document.getElementById("error1");
+        let error2 = document.getElementById("error2");
+        let error3 = document.getElementById("error3");
+
+
+
+        if (a == "" || b == "" || c == "" || d == "") {
+            alert("all fields are manadatory...");
+        } else {
+            alert("submitted...")
+        }
+        // } else if (c.length <5) {
+        //     alert("Pls enter a valid password");
+
+        // } else {
+        //     alert("pls enter the indicate things...");
+        // }
+
+        localStorage.setItem("name", a);
+        localStorage.setItem("Email", b);
+        localStorage.setItem("Password", c);
+        localStorage.setItem("message", d);
+    }
+</script>
+
+</html>
