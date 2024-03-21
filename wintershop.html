@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: black;
+    }
+    
+    nav {
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 5px 5px 7px rgb(165, 155, 155);
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        flex: 1;
+    }
+    
+    nav ul li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+        color: rgb(32, 133, 201);
+    }
+    
+    @media screen and (max-width: 100px) {
+        nav ul {
+            position: relative;
+            width: 100%;
+            display: none;
+        }
+        nav ul li {
+            text-align: left;
+            width: 100%;
+        }
+        nav ul li a {
+            padding: 8px 16px;
+        }
+        nav ul.show {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    
+    .words p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .words h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .words h3 {
+        font-size: 30px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .words h4 {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .words #inpt {
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        margin-left: 20px;
+    }
+    
+    .words #btn1 {
+        height: 50px;
+        width: 100px;
+        text-align: center;
+        font-size: 15px;
+        font-family: sans-serif;
+        font-weight: 900;
+        margin-left: 50px;
+        background-color: rgb(32, 133, 201);
+        color: white;
+        border-color: rgb(32, 133, 201);
+    }
+    
+    .words {
+        /* padding: 50px; */
+        line-height: 35px;
+        width: 100%;
+        /* background-color: red; */
+        text-align: left;
+    }
+    
+    .content {
+        padding: 50px;
+    }
+    
+    .sproduct .mainimg img {
+        height: 300px;
+    }
+    
+    .sproduct .mainimg {
+        padding: 50px;
+        height: 300px;
+    }
+    
+    .sproduct .smallimg img {
+        height: 73px;
+        /* margin-top: -200px;     */
+    }
+    
+    .sproduct .smallimg {
+        padding: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 50px;
+    }
+    
+    div.img {
+        background-color: silver;
+    }
+    
+    .sproduct {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: left;
+        align-items: center;
+        margin-top: 100px;
+    }
+    
+    .featureprod .card1 img {
+        height: 300px;
+        border-radius: 30px;
+    }
+    
+    .featureprod .card1 #ratings {
+        height: 20px;
+    }
+    
+    .featureprod .card1 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .featureprod .card1 h3 {
+        font-size: 30px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .featureprod .card1 {
+        height: 550px;
+        width: 400px;
+        background-color: silver;
+        padding: 50px;
+        box-shadow: 0px 0px 20px;
+        border-radius: 30px;
+    }
+    
+    .cards a:hover {
+        color: red;
+    }
+    
+    .featureprod .cards {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-self: center;
+        gap: 50px;
+        margin-top: 100px;
+    }
+    
+    .featureprod {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        margin-top: 100px;
+    }
+    
+    .featureprod h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+        margin-top: 100px;
+        text-align: center;
+        margin-top: 100px;
+    }
+    
+    .cards a {
+        color: black;
+        box-shadow: 0px 0px 10px black;
+    }
+    
+    .banner img {
+        height: 300px;
+        width: 100%;
+        margin-top: 50px;
+    }
+    
+    .footer {
+        height: 1000px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .footer .line1 {
+        padding: 50px;
+        line-height: 50px;
+    }
+    
+    .footer .line1 #contacts {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line1 table h1 {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 900;
+        /* line-height: 20px; */
+    }
+    
+    .footer .line1 img {
+        height: 50px;
+        mix-blend-mode: darken;
+    }
+    /* .footer .line1 .follow{
+    mix-blend-mode: darken;
+} */
+    
+    .footer .line2 h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line2 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .footer .line2 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line3 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line3 h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line3 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .footer .line4 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line4 h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line4 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .footer .line4 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line4 img {
+        height: 100px;
+    }
+    
+    button {
+        height: 40px;
+        width: 80px;
+        font-size: 10px;
+        font-family: sans-serif;
+        font-weight: 900;
+        background-color: white;
+        border: 2px solid white;
+        box-shadow: 0px 0px 10px black;
+        margin: 10px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- singleimg -->
+    <div class="sproduct">
+        <div class="img">
+            <div class="mainimg">
+                <img src="https://e1cd510083c32455bf4e-9174c6853f95d6b1d5019ad308bb2bec.ssl.cf2.rackcdn.com/product-hugerect-263185-17434-1384438947-036e0c6893cc10613e7d17d982964b5e.jpg" alt="" id="big" style="width: 250px;">
+            </div>
+            <div class="smallimg">
+                <div class="small">
+                    <img src="https://e1cd510083c32455bf4e-9174c6853f95d6b1d5019ad308bb2bec.ssl.cf2.rackcdn.com/product-hugerect-263185-17434-1384438947-036e0c6893cc10613e7d17d982964b5e.jpg" alt="" class="simg">
+                </div>
+                <div class="small">
+                    <img src="https://th.bing.com/th/id/OIP.nOwbr4ghmbhgkqamQ4apYwHaKQ?w=750&h=1039&rs=1&pid=ImgDetMain" alt="" class="simg">
+                </div>
+                <div class="small">
+                    <img src="https://www.kosha.co/journal/wp-content/uploads/2022/09/word-image-8489-2-533x800.jpeg" alt="" class="simg">
+                </div>
+                <div class="small">
+                    <img src="https://th.bing.com/th/id/OIP.4ixnivO26B9oiHT_gSS1CwAAAA?w=417&h=626&rs=1&pid=ImgDetMain" alt="" class="simg">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="content">
+            <div class="words">
+                <p>Home / T-shirt</p>
+                <h3>Mens Fashion T-shirt</h3>
+                <h1>$139.00</h1>
+                <h4>Select size </h4><select name="" id="">
+                    <option value="">
+                        M
+                    </option>
+                    <option value="">
+                        L
+                    </option>
+                    <option value="">
+                        xl
+                    </option>
+                    <option value="">
+                        s
+                    </option>
+                    <option value="">
+                        xxl
+                    </option>
+                    <option value="">
+                        N
+                    </option>
+                </select>
+                <input type="number" id="inpt">
+                <input type="button" name="" id="btn1" value="Add to cart">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br>Eveniet ad, perspiciatis optio at odio voluptatibus quae nisi tempora <br>inventore sit iste qui distinctio,<br>illum accusamus quaerat totam laborum <br>veniam assumenda.</p>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- banner -->
+    <div class="banner">
+        <img src="" alt="" name="slide">
+
+    </div>
+
+
+    <!-- feature product -->
+    <div class="featureprod">
+        <h1>Featured <span style="color:rgb(32, 133, 201) ;">Products</span></h1>
+        <div class="cards">
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://e1cd510083c32455bf4e-9174c6853f95d6b1d5019ad308bb2bec.ssl.cf2.rackcdn.com/product-hugerect-263185-17434-1384438947-036e0c6893cc10613e7d17d982964b5e.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cutton astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://i.pinimg.com/originals/e3/3e/ce/e33eceb5cc40da6bcd280bd555e5e09c.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cutton astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://i1.wp.com/www.ecstasycoffee.com/wp-content/uploads/2016/08/Cute-Summer-Dresses-20.jpg?resize=523%2C1104" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cutton astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://www.lulus.com/blog/wp-content/uploads/2022/07/3141630_597692-768x1152.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cutton astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://th.bing.com/th/id/OIP.CM-D6zvLa0Buf_YC6QjVvAHaLH?rs=1&pid=ImgDetMain" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cutton astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://th.bing.com/th/id/OIP.k_8kFD4CZkxmihXeVl3iwQHaLH?rs=1&pid=ImgDetMain" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://th.bing.com/th/id/OIP.-rhClaDoJIYZFS6ruwcKlgHaLH?w=1110&h=1665&rs=1&pid=ImgDetMain" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+
+
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://th.bing.com/th/id/OIP.1m3xccYOcaZGz4NUhx2CsAHaLG?rs=1&pid=ImgDetMain" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://media.samyakk.com/pub/media/catalog/product/k/r/kr868.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+            <a href="commingsoon.html">
+                <div class="card1">
+                    <img src="https://i.pinimg.com/736x/d1/79/4a/d1794af9ac8b32f11d1d100d4541926d.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+
+        </div>
+
+    </div>
+
+    <!-- footer part -->
+
+    <div class="footer">
+        <div class="line1">
+            <img src="" alt="">
+            <h1 id="contacts">Contacts</h1>
+            <table>
+                <tr>
+                    <td>
+                        <h1>Address - </h1>
+                    </td>
+                    <td>
+                        Barabati , Jajpur , odish , india
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <h1> Phone - </h1>
+                    </td>
+                    <td>
+                        9178330413 , 9938823444
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1>Hour - </h1>
+                    </td>
+                    <td>
+                        10 : 00 - 09 : 00
+                    </td>
+                </tr>
+            </table>
+            <div class="follow">
+                <img src="https://th.bing.com/th/id/R.af1159ea3dd22f4b3d84a87d869127b9?rik=iz68IEBoErXAHw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2finstagram-icon-png-instagram-icon-1600.png&ehk=%2bAo2wF7lgRZJrtXPe3ev37c8JDCD6NBcj%2fGufhuhjQE%3d&risl=&pid=ImgRaw&r=0"
+                    alt="">
+                <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-facebook-social-media-icon-design-template-vector-png-image_3654755.jpg" alt="">
+                <img src="https://th.bing.com/th/id/OIP.7A7wPafSHhqttqoN-VQafAHaHa?rs=1&pid=ImgDetMain" alt="">
+                <img src="https://th.bing.com/th/id/OIP.uQlQc1ej3xTRMpywzGuFvAHaHw?rs=1&pid=ImgDetMain" alt="">
+            </div>
+        </div>
+
+        <div class="line2">
+            <h1>About</h1>
+            <p>About us</p>
+            <p>Delivery information</p>
+            <p>Privacy Policy</p>
+            <p>Terms & conditions</p>
+            <p>Contacts us</p>
+        </div>
+
+
+
+
+        <div class="line3">
+            <h1>My Account</h1>
+            <p>Sign in </p>
+            <p>View cart</p>
+            <p>my Whistle</p>
+            <p>Track my location</p>
+            <p>My orders</p>
+        </div>
+
+
+        <div class="line4">
+            <h1>Install my app</h1>
+            <p>From google play store & App store</p>
+            <img src="https://th.bing.com/th/id/OIP.YuiKPjNic91oLzZLkLQbmwHaHa?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://9to5mac.com/wp-content/uploads/sites/6/2014/11/tumblr_inline_ms796b31jr1qz4rgp1.png" alt="">
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var main = document.getElementById("big")
+    var small = document.getElementsByClassName("simg")
+
+
+
+
+
+    small[0].onclick = function() {
+        main.src = small[0].src;
+    }
+    small[1].onclick = function() {
+        main.src = small[1].src;
+    }
+    small[2].onclick = function() {
+        main.src = small[2].src;
+    }
+    small[3].onclick = function() {
+        main.src = small[3].src;
+    }
+
+
+    let i = 0;
+    let images = [];
+    let time = 3000;
+
+    images[0] = 'https://static.vecteezy.com/system/resources/previews/000/669/988/original/vector-shopping-online-banner.jpg';
+    images[1] = 'https://img.freepik.com/premium-vector/shopping-online-website-mobile-application-landing-page-concept-marketing-digital-marketing_144352-86.jpg?w=1060';
+    images[2] = 'https://blog.robosoftin.com/wp-content/uploads/2019/08/Technologies-Personalization-in-Retail-792x527.jpg';
+    images[3] = 'https://static.vecteezy.com/system/resources/previews/004/299/835/original/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector.jpg';
+
+
+    function changeimg() {
+        document.slide.src = images[i];
+        if (i < images.length - 1) {
+            i++;
+        } else {
+            i = 0;
+        }
+        setTimeout("changeimg()", time);
+    }
+    window.onload = changeimg;
+</script>
+
+</html>
