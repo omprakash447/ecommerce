@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop page</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: black;
+    }
+    
+    nav {
+        background-color: #fff;
+        overflow: hidden;
+        box-shadow: 5px 5px 7px rgb(165, 155, 155);
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        flex: 1;
+    }
+    
+    nav ul li a {
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    nav ul li a:hover {
+        color: rgb(32, 133, 201);
+    }
+    
+    @media screen and (max-width: 100px) {
+        nav ul {
+            position: relative;
+            width: 100%;
+            display: none;
+        }
+        nav ul li {
+            text-align: left;
+            width: 100%;
+        }
+        nav ul li a {
+            padding: 8px 16px;
+        }
+        nav ul.show {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+    
+    .watermark {
+        background-image: url(https://wallpapercave.com/wp/wp7969230.jpg);
+        width: 100%;
+        height: 300px;
+        background-position: center;
+        margin-top: 100px;
+        padding: 50px;
+        color: #fff;
+    }
+    
+    .watermark h1 {
+        font-size: 45px;
+        font-family: sans-serif;
+        font-weight: 900;
+        text-align: center;
+    }
+    
+    .watermark p {
+        font-size: 25px;
+        font-family: sans-serif;
+        font-weight: 100;
+        text-align: center;
+    }
+    
+    .featureprod .card1 img {
+        height: 300px;
+        border-radius: 30px;
+    }
+    
+    .featureprod .card1 #ratings {
+        height: 20px;
+    }
+    
+    .featureprod .card1 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .featureprod .card1 h3 {
+        font-size: 30px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .featureprod .card1 {
+        height: 550px;
+        width: 400px;
+        background-color: silver;
+        padding: 50px;
+        box-shadow: 0px 0px 20px;
+        border-radius: 30px;
+    }
+    
+    .cards a:hover {
+        color: red;
+    }
+    
+    .featureprod .cards {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-self: center;
+        gap: 50px;
+        margin-top: 100px;
+    }
+    
+    .featureprod {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+    }
+    
+    .featureprod h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+        margin-top: 100px;
+        text-align: center;
+    }
+    
+    .cards a {
+        color: black;
+        box-shadow: 0px 0px 10px black;
+    }
+    
+    .footer {
+        height: 1000px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .footer .line1 {
+        padding: 50px;
+        line-height: 50px;
+    }
+    
+    .footer .line1 #contacts {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line1 table h1 {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 900;
+        /* line-height: 20px; */
+    }
+    
+    .footer .line1 img {
+        height: 50px;
+        mix-blend-mode: darken;
+    }
+    /* .footer .line1 .follow{
+    mix-blend-mode: darken;
+} */
+    
+    .footer .line2 h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line2 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .footer .line2 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line3 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line3 h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line3 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .footer .line4 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line4 h1 {
+        font-size: 40px;
+        font-family: sans-serif;
+        font-weight: 900;
+    }
+    
+    .footer .line4 p {
+        font-size: 20px;
+        font-family: sans-serif;
+        font-weight: 100;
+    }
+    
+    .footer .line4 {
+        padding: 50px;
+        line-height: 40px;
+    }
+    
+    .footer .line4 img {
+        height: 100px;
+    }
+    
+    button {
+        height: 40px;
+        width: 80px;
+        font-size: 10px;
+        font-family: sans-serif;
+        font-weight: 900;
+        background-color: white;
+        border: 2px solid white;
+        box-shadow: 0px 0px 10px black;
+        margin: 10px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Watermark -->
+
+    <div class="watermark">
+        <h1>#Sty home</h1>
+        <p>Save more with coupns & up to 50% off</p>
+    </div>
+
+    <!-- S products -->
+
+    <div class="featureprod">
+        <h1>Winter collections <span style="color:rgb(32, 133, 201) ;">Product</span></h1>
+        <div class="cards">
+            <a href="wintershop.html">
+                <div class="card1">
+                    <img src="https://e1cd510083c32455bf4e-9174c6853f95d6b1d5019ad308bb2bec.ssl.cf2.rackcdn.com/product-hugerect-263185-17434-1384438947-036e0c6893cc10613e7d17d982964b5e.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Black Boss Masters Jacket</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$56</h2>
+                </div>
+            </a>
+
+            <a href="wintershop.html">
+                <div class="card1">
+                    <img src="https://th.bing.com/th/id/OIP.nOwbr4ghmbhgkqamQ4apYwHaKQ?w=750&h=1039&rs=1&pid=ImgDetMain" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Jacket jshon</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$48</h2>
+                </div>
+            </a>
+
+            <a href="wintershop.html">
+                <div class="card1">
+                    <img src="https://www.kosha.co/journal/wp-content/uploads/2022/09/word-image-8489-2-533x800.jpeg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Red Hoodie Female</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$89</h2>
+                </div>
+            </a>
+
+            <a href="wintershop.html">
+                <div class="card1">
+                    <img src="https://th.bing.com/th/id/OIP.4ixnivO26B9oiHT_gSS1CwAAAA?w=417&h=626&rs=1&pid=ImgDetMain" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+            <a href="wintershop.html">
+                <div class="card1">
+                    <img src="https://thumbs.dreamstime.com/b/pretty-teen-girl-wearing-warm-winter-clothes-closeup-portrait-beautiful-smiling-teenager-perfect-makeup-hat-scarf-83749147.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Winter Scart for owmen</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$34</h2>
+                </div>
+            </a>
+
+            <a href="wintershop1.html">
+
+                <div class="card1">
+                    <img src="https://i.pinimg.com/originals/d4/ae/6a/d4ae6a84bdf5a5769cb61a41f088cd07.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+            <a href="wintershop1.html">
+                <div class="card1">
+                    <img src="https://i.pinimg.com/originals/64/a6/0d/64a60d919cb17bb0a061bbe17132c483.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+
+
+            <a href="wintershop1.html">
+                <div class="card1">
+                    <img src="https://th.bing.com/th/id/OIP.OHxpE0RjXq39CnFFPXLgMwAAAA?rs=1&pid=ImgDetMain" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Winter collection new Blact T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$88</h2>
+                </div>
+            </a>
+
+
+            <a href="wintershop1.html">
+                <div class="card1">
+                    <img src="https://m.media-amazon.com/images/I/61qPRZx7r2L._AC_UL1430_.jpg" alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$98</h2>
+                </div>
+            </a>
+
+            <a href="wintershop1.html">
+                <div class="card1">
+                    <img src="https://th.bing.com/th/id/R.39fa8647fe3211e787dd86df0b43f51d?rik=uYIFdAOGpuLm5A&riu=http%3a%2f%2f1.bp.blogspot.com%2f-sJz6VSaI5dk%2fUOiBzPyhhCI%2fAAAAAAAAFKo%2fJ1fzlW2YVB8%2fs1600%2fLatest%2bOutfitter%2bMen%27s%2bFall-Winter%2bCollection%2b2012-13%2b-009%2b%2b--%2bwww.worldfashioncorner.blogspot.com.jpg&ehk=lTPMEJiSn4pHnXC8%2byTXJeHF%2fuqeMY9yzn1Vl8Z8NJE%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" style="width: 300px;">
+                    <p>adidas</p>
+                    <h3>Cartoon astronaut T-shirt</h3>
+                    <img src="https://th.bing.com/th/id/R.2002076951da1ee416e4c505b64b33e5?rik=TZ2%2f9g0fLHsesg&riu=http%3a%2f%2fclipart-library.com%2fnew_gallery%2f104-1043568_5-star-rating-png.png&ehk=YOQJ5d%2bFlIE%2bQSstHBdgNgOm3Xoqa3JuZLj0VNvpjrI%3d&risl=&pid=ImgRaw&r=0"
+                        alt="" id="ratings">
+                    <h2>$78</h2>
+                </div>
+            </a>
+
+
+        </div>
+
+    </div>
+
+    <!-- footer part -->
+    <div class="footer">
+        <div class="line1">
+            <img src="" alt="">
+            <h1 id="contacts">Contacts</h1>
+            <table>
+                <tr>
+                    <td>
+                        <h1>Address - </h1>
+                    </td>
+                    <td>
+                        Barabati , Jajpur , odish , india
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <h1> Phone - </h1>
+                    </td>
+                    <td>
+                        9178330413 , 9938823444
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1>Hour - </h1>
+                    </td>
+                    <td>
+                        10 : 00 - 09 : 00
+                    </td>
+                </tr>
+            </table>
+            <div class="follow">
+                <img src="https://th.bing.com/th/id/R.af1159ea3dd22f4b3d84a87d869127b9?rik=iz68IEBoErXAHw&riu=http%3a%2f%2fpluspng.com%2fimg-png%2finstagram-icon-png-instagram-icon-1600.png&ehk=%2bAo2wF7lgRZJrtXPe3ev37c8JDCD6NBcj%2fGufhuhjQE%3d&risl=&pid=ImgRaw&r=0"
+                    alt="">
+                <img src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-facebook-social-media-icon-design-template-vector-png-image_3654755.jpg" alt="">
+                <img src="https://th.bing.com/th/id/OIP.7A7wPafSHhqttqoN-VQafAHaHa?rs=1&pid=ImgDetMain" alt="">
+                <img src="https://th.bing.com/th/id/OIP.uQlQc1ej3xTRMpywzGuFvAHaHw?rs=1&pid=ImgDetMain" alt="">
+            </div>
+        </div>
+
+        <div class="line2">
+            <h1>About</h1>
+            <p>About us</p>
+            <p>Delivery information</p>
+            <p>Privacy Policy</p>
+            <p>Terms & conditions</p>
+            <p>Contacts us</p>
+        </div>
+
+
+
+
+        <div class="line3">
+            <h1>My Account</h1>
+            <p>Sign in </p>
+            <p>View cart</p>
+            <p>my Whistle</p>
+            <p>Track my location</p>
+            <p>My orders</p>
+        </div>
+
+
+        <div class="line4">
+            <h1>Install my app</h1>
+            <p>From google play store & App store</p>
+            <img src="https://th.bing.com/th/id/OIP.YuiKPjNic91oLzZLkLQbmwHaHa?rs=1&pid=ImgDetMain" alt="">
+            <img src="https://9to5mac.com/wp-content/uploads/sites/6/2014/11/tumblr_inline_ms796b31jr1qz4rgp1.png" alt="">
+        </div>
+    </div>
+
+</body>
+
+</html>
